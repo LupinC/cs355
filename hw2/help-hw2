@@ -1,0 +1,26 @@
+#include "basic.h"
+#include "hw2.h"
+
+/* Put up first input number */
+Switch aa x3 '1' ZERO;
+Switch ab x2 '2' ZERO;
+Switch ac x1 '3' ZERO;
+Switch ad x0 '4' ZERO;
+
+/* Put up second input number */
+Switch af y3 '6' ZERO;
+Switch ag y2 '7' ZERO;
+Switch ah y1 '8' ZERO;
+Switch ai y0 '9' ZERO;
+
+Mult4 cc-cf  x3 x2 x1 x0  y3 y2 y1 y0 | m7 m6 m5 m4 m3 m2 m1 m0;
+
+
+Probe eb m7;
+Probe ec m6;
+Probe ed m5;
+Probe ee m4;
+Probe ef m3;
+Probe eg m2;
+Probe eh m1;
+Probe ei m0;
