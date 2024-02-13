@@ -1,0 +1,16 @@
+
+/* Sample circuit to show you how to use the built-in Mux circuit */
+
+Switch da A '0' ZERO;
+Switch ca B '1' ZERO;
+Switch ba C '2' ZERO;
+Switch aa D '3' ZERO;
+
+Switch fb c1 'b' ZERO;
+Switch fc c0 'a' ZERO;
+
+Mux ab-db c1 c0 | D C B A | o ;
+
+   
+Probe cc o;
+

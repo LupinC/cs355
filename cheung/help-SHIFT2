@@ -1,0 +1,44 @@
+/* --------------- Test circuit for ALU16 macro --------------- */
+
+/* This test program uses a different initial input number */
+
+
+/* WARNING: I have included basic.h and rom16.h, so do NOT include
+            these files in your alu-sft.h
+*/
+#include "basic.h"
+
+/* -------------- **** You provide the alu-shf.h file **** ---------------- */
+/* ---- this file must contain the ALU16 macro for help-ALU to work ------- */
+
+#include "alu-shf.h"
+
+
+
+
+/* Switches for number 1 */
+Switch ac-ae.aa a[15] '1' ONE;
+Switch ac-ae.ab a[14] '2' ONE;
+Switch ac-ae.ac a[13] '3' ONE;
+Switch ac-ae.ad a[12] '4' ONE;
+Switch ac-ae.ae a[11] 'q' ZERO;
+Switch ac-ae.af a[10] 'w' ZERO;
+Switch ac-ae.ag a[9] 'e' ZERO;
+Switch ac-ae.ah a[8] 'r' ZERO;
+Switch ac-ae.ai a[7] 'a' ONE;
+Switch ac-ae.aj a[6] 's' ONE;
+Switch ac-ae.ak a[5] 'd' ONE;
+Switch ac-ae.al a[4] 'f' ONE;
+Switch ac-ae.am a[3] 'z' ZERO;
+Switch ac-ae.an a[2] 'x' ZERO;
+Switch ac-ae.ao a[1] 'c' ZERO;
+Switch ac-ae.ap a[0] 'v' ZERO;
+
+
+
+Switch bc.aa c[1] '6' ZERO;
+Switch bc.ab c[0] '7' ZERO;
+
+SHIFTER16 bd a[15..0] c[1..0] | s[15..0] ;
+
+ProbeH cc-ce s;
