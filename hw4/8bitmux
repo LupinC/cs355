@@ -1,0 +1,24 @@
+Switch aa i[7] '7' ZERO;
+Switch ba i[6] '6' ZERO;
+Switch ca i[5] '5' ZERO;
+Switch da i[4] '4' ZERO;
+Switch ea i[3] '3' ZERO;
+Switch fa i[2] '2' ZERO;
+Switch ga i[1] '1' ZERO;
+Switch ha i[0] '0' ZERO;
+
+
+Switch af j[7] 'q' ZERO;
+Switch bf j[6] 'w' ZERO;
+Switch cf j[5] 'e' ZERO;
+Switch df j[4] 'r' ZERO;
+Switch ef j[3] 't' ZERO;
+Switch ff j[2] 'y' ZERO;
+Switch gf j[1] 'u' ZERO;
+Switch hf j[0] 'o' ZERO;
+
+Switch jc control0 's' ZERO;
+Mux ab-hb control0 | i[7..0] j[7..0] | v[7..0];
+
+Probe ad-hd v;
+

@@ -1,0 +1,39 @@
+=========================================================
+Files in this handout and their purpose:
+=========================================================
+
+help-CLK: main circuit file for testing the Four_Phase_Clock circuit
+          When you completed the Four_Phase_Clock circuit, use:
+
+		/home/cs355001/bin/cs355sim  help-CLK
+
+	  to test your Four_Phase_Clock circuit.
+
+help-MPC: main circuit file for testing the MPC_With_Reset circuit
+          When you completed the MPC_With_Reset circuit, use:
+
+                /home/cs355001/bin/cs355sim  help-MPC
+
+          to test your MPC_With_Reset circuit.
+
+clock.h:  This is your project file for pj4.
+	  You will need to complete the
+
+		Four_Phase_Clock circuit    and
+		MPC_With_Reset   circuit
+
+	  inside this file.
+
+====================================================================
+
+basic.h:  contains definition for  Full_Adder and  Decoder2x4
+          It's included in help-CLK and help-MPC, so you use
+	  the Full_Adder and Decoder2x4 circuits in your project.
+
+sample-Dff:  Sample circuit file that shows you HOW to use 
+	     EDiSim's Dff component
+
+sample-mux:  Sample circuit file that shows you HOW to use 
+	     EDiSim's Mux component
+
+

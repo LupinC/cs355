@@ -1,0 +1,29 @@
+/* Test circuit for proj4 - from Matt Kimbel */
+
+#include "basic.h"
+#include "clock.h"
+
+Switch aa Reset  'a' ZERO;
+Switch ba Branch '1' ZERO;
+Switch da Clk    '0' ZERO;
+
+Switch bc Addr[7] '2' ZERO;
+Switch bd Addr[6] '3' ZERO;
+Switch be Addr[5] '4' ONE;
+Switch bf Addr[4] '5' ONE;
+Switch bg Addr[3] '6' ZERO;
+Switch bh Addr[2] '7' ZERO;
+Switch bi Addr[1] '8' ONE;
+Switch bj Addr[0] '9' ONE;
+  
+PC_with_Branching bb-db Reset Clk Branch Addr[7..0] | MPC[7..0] ;
+
+Probe dc MPC[7];
+Probe dd MPC[6];
+Probe de MPC[5];
+Probe df MPC[4];
+Probe dg MPC[3];
+Probe dh MPC[2];
+Probe di MPC[1];
+Probe dj MPC[0];
+

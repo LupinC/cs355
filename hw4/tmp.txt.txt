@@ -1,0 +1,22 @@
+/* =======================================
+   Traffic light FSA
+
+   I'm using the Dff built-in component
+   ======================================== */
+Switch da clk '0' ZERO;
+Switch ba error '1' ONE;
+
+Not cc q1 q1_bar;
+And cc q0 q1_bar and1;
+Or  cc error and1 or1;
+Probe cc or1;
+Dff bd-dd ZERO or1 clk ZERO q1 ;
+
+Not cg q0 q0_bar;
+And cg q1_bar q0_bar and2;
+Or  cg error and2 or2;
+Probe cg or2;
+Dff bh-dh ZERO or2 clk ZERO q0 ;
+
+Probe ad q1;
+Probe ah q0;

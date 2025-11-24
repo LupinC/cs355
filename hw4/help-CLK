@@ -1,0 +1,14 @@
+
+#include "basic.h"
+#include "clock.h"
+
+Switch aa Reset 'a' ZERO;
+Switch aa Clk '0' ZERO;
+
+Four_Phase_Clock ab Reset Clk | Ph1 Ph2 Ph3 Ph4;
+
+Probe ac Ph1;
+Probe ad Ph2;
+Probe ae Ph3;
+Probe af Ph4;
+

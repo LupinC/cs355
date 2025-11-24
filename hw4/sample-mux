@@ -1,0 +1,49 @@
+
+/* Sample circuit to show you how to use the built-in Mux circuit */
+
+
+Switch ba A[7] '2'  ONE;
+Switch bb A[6] '3' ZERO;
+Switch bc A[5] '4' ZERO;
+Switch bd A[4] '5'  ONE;
+Switch be A[3] '6'  ONE;
+Switch bf A[2] '7'  ONE;
+Switch bg A[1] '8' ZERO;
+Switch bh A[0] '9' ZERO;
+  
+Switch bj B[7] 'w' ZERO;
+Switch bk B[6] 'e'  ONE;
+Switch bl B[5] 'r' ZERO;
+Switch bm B[4] 't'  ONE;
+Switch bn B[3] 'y' ZERO;
+Switch bo B[2] 'u'  ONE;
+Switch bp B[1] 'i' ZERO;
+Switch bq B[0] 'o'  ONE;
+
+Switch ca sel     '0' ZERO;
+
+/* ======================================================================
+   How to use the built-in Mux:
+
+      Mux  coord  N sel-signals | 2^N inputs (can be arrays) | 1 output
+
+
+   Mux bb-db sel | A[7..0] B[7..0] | out[7..0] ;
+             ^^^   ^^^^^^^^^^^^^^^^  ^^^^^^^^^
+           1 sel     2^1 inputs       1 output
+
+   If sel = 0 then:   out[7..0] = B[7..0]
+   If sel = 1 then:   out[7..0] = A[7..0]
+   ====================================================================== */
+Mux ce-cn sel | A[7..0] B[7..0] | out[7..0] ;
+
+   
+Probe df out[7];
+Probe dg out[6];
+Probe dh out[5];
+Probe di out[4];
+Probe dj out[3];
+Probe dk out[2];
+Probe dl out[1];
+Probe dm out[0];
+

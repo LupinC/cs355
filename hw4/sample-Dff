@@ -1,0 +1,23 @@
+
+/* Sample circuit to show you how to use the built-in Mux circuit */
+
+
+Switch aa Reset 'a'  ZERO;
+Switch ba inp   '1'  ONE;
+Switch ca Clk   '0'  ZERO;
+
+/* ======================================================================
+   How to use the built-in Dff:
+
+      Dff  coord  set  input  clk  reset  output ;
+
+   Example:
+
+      Dff  aa  ZERO  in  Clk  Reset  out ;
+
+   If Reset = 1 then:   out = 0
+   If Reset = 0 then:   out = in when Clk is raised and dropped
+   ====================================================================== */
+Dff bb-cb  ZERO  inp  Clk  Reset  out ;
+
+Probe bc out;
