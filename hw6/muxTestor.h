@@ -1,0 +1,12 @@
+Switch aa i[7] '7' ZERO;
+Switch ba i[6] '6' ZERO;
+Switch ca i[5] '5' ZERO;
+Switch da i[4] '4' ZERO;
+Switch ea i[3] '3' ZERO;
+Switch fa i[2] '2' ZERO;
+Switch ga i[1] '1' ZERO;
+Switch ha i[0] '0' ZERO;
+Switch jb control1 'a' ZERO;
+Switch jc control0 's' ZERO;
+Mux ab-hb control1 control0 | i[7..6] i[5..4] i[3..2] i[1..0] | o[1..0];
+Probe ad-hd o;

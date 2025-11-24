@@ -1,0 +1,19 @@
+/home/cs355001/bin/LogicSim2CC---   datapath
+/home/cs355001/bin/LogicSimCompiler datapath.cc
+
+if (( $? == 0 ))
+then
+  /bin/rm datapath.cc
+  g++ -g -o simex -I/home/edisim/lib/c/header \
+	help-DataPath.o  datapath.o  alu-shf.o  clock.o  mir.o \
+	-L/home/edisim/lib/c -lLogicSim18 -L/usr/lib64 -lX11
+
+  simex
+
+else
+  echo 
+  echo ++++ Your EDiSim code cannot be compiled
+  echo ++++ Correct your errors in datapath.h and try again
+  echo 
+fi
+

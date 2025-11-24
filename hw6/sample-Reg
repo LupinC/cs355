@@ -1,0 +1,65 @@
+
+
+/* ------------------------------------------------------------------
+   Sample circuit to show you how to use the
+   ResetableReg16 circuit in basic.h 
+
+   ResetableReg16 is a 16 bit register (memory) that you can reset
+   ------------------------------------------------------------------ */
+
+#include "basic.h"
+
+
+/* ======================================================================
+   How to use the Const_minus1 circuit:
+
+      ResetableReg16  coord   in[15..0]  ld  reset  |  out[15..0];
+
+      in[15..0]  = the 16 bin input that you want to write
+      ld         = "load", i.e., the write (=store) signal
+                   If ld goes up and then down; register will store
+                   in[15..0] to out[15..0] when reset = 0
+      reset      = 1 will reset (= clear) the register
+                   0 will make the device work like a 16 bit memory
+      out[15..0] = the 16 bit data stored in the register
+   ====================================================================== */
+ResetableReg16  ab-hb d[15..0] ld r | out[15..0];
+
+
+Switch aa d[15] '1' ZERO;
+Switch aa d[14] '2' ZERO;
+Switch ba d[13] '3' ZERO;
+Switch ba d[12] '4' ZERO;
+Switch ca d[11] '5' ZERO;
+Switch ca d[10] '6' ZERO;
+Switch da d[9]  '7' ZERO;
+Switch da d[8]  '8' ZERO;
+Switch ea d[7]  'q' ZERO;
+Switch ea d[6]  'w' ZERO;
+Switch fa d[5]  'e' ZERO;
+Switch fa d[4]  'r' ZERO;
+Switch ga d[3]  't' ZERO;
+Switch ga d[2]  'y' ZERO;
+Switch ha d[1]  'u' ZERO;
+Switch ha d[0]  'i' ZERO;
+
+Switch ja ld   'z' ZERO;
+Switch ka r    'x' ZERO;
+   
+ProbeH ac out[15];
+ProbeH ac out[14];
+ProbeH bc out[13];
+ProbeH bc out[12];
+ProbeH cc out[11];
+ProbeH cc out[10];
+ProbeH dc out[9];
+ProbeH dc out[8];
+ProbeH ec out[7];
+ProbeH ec out[6];
+ProbeH fc out[5];
+ProbeH fc out[4];
+ProbeH gc out[3];
+ProbeH gc out[2];
+ProbeH hc out[1];
+ProbeH hc out[0];
+

@@ -1,0 +1,36 @@
+
+
+/* -------------------------------------------------------------
+   Sample circuit to show you how to use one of the many 
+   Const circuits in basic.h 
+
+   Const_1  always outputs the 1 value (0000000000000001)
+   ------------------------------------------------------------- */
+
+#include "basic.h"
+
+
+/* ======================================================================
+   How to use the Const_minus1 circuit:
+
+      Const_minus1  coord  | 16 outputs ;
+   ====================================================================== */
+Const_1 ab-hb | out[15..0];
+   
+ProbeH ac out[15];
+ProbeH ac out[14];
+ProbeH bc out[13];
+ProbeH bc out[12];
+ProbeH cc out[11];
+ProbeH cc out[10];
+ProbeH dc out[9];
+ProbeH dc out[8];
+ProbeH ec out[7];
+ProbeH ec out[6];
+ProbeH fc out[5];
+ProbeH fc out[4];
+ProbeH gc out[3];
+ProbeH gc out[2];
+ProbeH hc out[1];
+ProbeH hc out[0];
+
