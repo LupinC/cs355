@@ -1,0 +1,33 @@
+=========================================================
+Files in this handout and their purpose:
+=========================================================
+
+help-ALU: main circuit file for testing the ALU16 circuit
+          When you completed the ALU16 circuit, use:
+
+                /home/cs355001/bin/cs355sim  help-ALU
+
+          to test your ALU16 circuit.
+
+help-SHIFT: main circuit file for testing the SHIFTER16 circuit
+          When you completed the SHIFTER16 circuit, use:
+
+                /home/cs355001/bin/cs355sim  help-SHIFT
+
+          to test your SHIFTER16 circuit.
+
+alu-shf.h:  This is your project file for pj3.
+          You will need to complete the
+
+                ALU16     circuit    and
+                SHIFTER16 circuit
+
+          inside this file.
+
+====================================================================
+
+basic.h:  contains definition for  Full_Adder and  Decoder2x4
+          It's included in help-CLK and help-MPC, so you use
+          the Full_Adder and Decoder2x4 circuits in your project.
+
+

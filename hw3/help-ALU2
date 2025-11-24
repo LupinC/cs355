@@ -1,0 +1,64 @@
+/* --------------- Test circuit2 for ALU16 macro --------------- */
+
+/* This test program uses 2 different initial input numbers */
+
+/* WARNING: I have included basic.h and rom16.h, so do NOT include
+            these files in your alu-sft.h
+*/
+#include "basic.h"
+
+/* -------------- **** You provide the alu-shf.h file **** ---------------- */
+/* ---- this file must contain the ALU16 macro for help-ALU to work ------- */
+
+#include "alu-shf.h"
+
+
+
+
+/* Switches for number 1 */
+Switch ab-ac.aa a[15] '1' ONE;
+Switch ab-ac.ab a[14] '2' ONE;
+Switch ab-ac.ac a[13] '3' ONE;
+Switch ab-ac.ad a[12] '4' ONE;
+Switch ab-ac.ae a[11] 'q' ONE;
+Switch ab-ac.af a[10] 'w' ONE;
+Switch ab-ac.ag a[9] 'e' ONE;
+Switch ab-ac.ah a[8] 'r' ONE;
+Switch ab-ac.ai a[7] 'a' ZERO;
+Switch ab-ac.aj a[6] 's' ZERO;
+Switch ab-ac.ak a[5] 'd' ZERO;
+Switch ab-ac.al a[4] 'f' ZERO;
+Switch ab-ac.am a[3] 'z' ZERO;
+Switch ab-ac.an a[2] 'x' ZERO;
+Switch ab-ac.ao a[1] 'c' ZERO;
+Switch ab-ac.ap a[0] 'v' ZERO;
+
+
+/* Switches controlling selection of ROM 2 */
+Switch ae-af.aa b[15] '8' ZERO;
+Switch ae-af.ab b[14] '9' ZERO;
+Switch ae-af.ac b[13] '0' ZERO;
+Switch ae-af.ad b[12] '-' ZERO;
+Switch ae-af.ae b[11] 'u' ZERO;
+Switch ae-af.af b[10] 'i' ZERO;
+Switch ae-af.ag b[9] 'o' ZERO;
+Switch ae-af.ah b[8] 'p' ZERO;
+Switch ae-af.ai b[7] 'h' ONE;
+Switch ae-af.aj b[6] 'j' ONE;
+Switch ae-af.ak b[5] 'k' ONE;
+Switch ae-af.al b[4] 'l' ONE;
+Switch ae-af.am b[3] 'b' ONE;
+Switch ae-af.an b[2] 'n' ONE;
+Switch ae-af.ao b[1] 'm' ONE;
+Switch ae-af.ap b[0] ',' ONE;
+
+
+Switch bc.aa c[1] '6' ZERO;
+Switch bc.ab c[0] '7' ZERO;
+
+ALU16 bd a[15..0] b[15..0] c[1..0] | s[15..0] N Z;
+
+ProbeH cc-ce s;
+
+Probe be N;
+Probe be Z;
