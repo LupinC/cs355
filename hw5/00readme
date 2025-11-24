@@ -1,0 +1,28 @@
+
+For homework 5:
+
+   (1) Edit  hw5.h
+
+       There are 10 machine instructions in this file
+       Change the bit patterns to encode the proper machine instruction
+
+       Save the file before running the test
+
+   (2) Test if the instruction codes are correct:
+
+       Type the command in the SSH window:
+
+		run-hw5
+
+       The EDiSim program will simulate the CPU.
+       Pick the instruction you want to execute with keys 0,1,2,3
+
+       To execute an instruction:
+
+	   press b once (so Reset = 0)
+	   toggle a  4 times to execute 1 instruction
+
+       After executing an instruction, EXAMINING the content of the 
+       destination register and verify that the instruction has
+       the desired effect.
+

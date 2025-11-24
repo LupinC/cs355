@@ -1,0 +1,18 @@
+g++ -g -o simex -I/home/edisim/lib/c/header \
+	help-MIR.cc clock.o alu-shf.o hw5-datapath.o \
+	-L/home/edisim/lib/c -lLogicSim18 -L/usr/lib64 -lX11
+
+simex
+/bin/rm simex
+
+exit 
+
+
+/home/cs355001/bin/old-cs355sim  help-MIR
+
+if [[ $? -eq 0 ]]
+then
+   simex
+   /bin/rm simex
+fi
+
